@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, Menu, MessageCircle } from "lucide-react";
+import { ShoppingBag, Menu, MessageCircle, Globe } from "lucide-react";
 import { WHATSAPP_NUMBER, navLinks } from "../constants";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-40">
@@ -18,15 +25,23 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.path}
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
+            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">
+              {t('nav.home')}
+            </Link>
+            <a href="/#products" className="text-gray-700 hover:text-blue-600 font-medium">
+              {t('nav.products')}
+            </a>
+            <a href="/#about" className="text-gray-700 hover:text-blue-600 font-medium">
+              {t('nav.about')}
+            </a>
+
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium cursor-pointer"
+            >
+              <Globe className="w-5 h-5" />
+              <span>{i18n.language === "en" ? "AR" : "EN"}</span>
+            </button>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
@@ -51,16 +66,27 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden pb-4 border-t border-gray-100 mt-2">
             <div className="flex flex-col space-y-2 mt-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  className="block px-2 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
+              <Link
+                to="/"
+                className="block px-2 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.home')}
+              </Link>
+              <a
+                href="/#products"
+                className="block px-2 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.products')}
+              </a>
+              <a
+                href="/#about"
+                className="block px-2 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.about')}
+              </a>
 
               {/* 👇 ADDED THIS SECTION FOR MOBILE WHATSAPP 👇 */}
               <a

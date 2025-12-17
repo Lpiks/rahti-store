@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "Home",
+        "products": "Products",
+        "about": "About",
+        "whatsapp": "WhatsApp"
+    },
+    "hero": {
+        "title": "Find Your Next",
+        "title_highlight": "Product",
+        "subtitle": "Discover the latest trending items. Best quality, unbeatable prices, and fast delivery to your door.",
+        "cta": "Shop Trending Now"
+    },
+    "home": {
+        "our_collection": "Our Collection"
+    },
+    "about": {
+        "title": "Why Shop at",
+        "title_highlight": "Rahti?",
+        "subtitle": "We bring you the best quality leather boots with a service you can trust.",
+        "features": {
+            "delivery": {
+                "title": "Fast Delivery",
+                "description": "We deliver quickly to 58 Wilayas. Get your boots right to your doorstep."
+            },
+            "payment": {
+                "title": "Payment on Delivery",
+                "description": "Inspect your product first, then pay. Shop with 100% confidence."
+            },
+            "quality": {
+                "title": "Verified Quality",
+                "description": "We hand-pick every pair to ensure you get the best premium leather."
+            }
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} Abdelhadi | Hammaz. All rights reserved. Made in Algeria."
+    },
+    "checkout": {
+        "title": "Complete Your Order",
+        "success_title": "Order Placed!",
+        "success_msg": "We will call you at {{phone}} shortly.",
+        "product_summary": "Qty: {{qty}}",
+        "full_name": "Full Name",
+        "phone": "Phone (05/06/07)",
+        "wilaya": "Wilaya",
+        "select_wilaya": "Select Wilaya...",
+        "commune": "Commune",
+        "select_commune": "Select Commune...",
+        "qty": "Qty",
+        "address": "Address (Street, Building...)",
+        "confirm_btn": "Confirm Order",
+        "errors": {
+            "full_name": "Full name is required",
+            "phone_required": "Phone number is required",
+            "phone_invalid": "Must be a valid Algerian number",
+            "wilaya": "Wilaya is required",
+            "commune": "Commune is required",
+            "address": "Address is required"
+        }
+    }
+}

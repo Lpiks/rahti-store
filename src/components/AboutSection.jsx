@@ -1,17 +1,20 @@
 import React from "react";
 import { Truck, ShieldCheck, Banknote } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
+    const { t } = useTranslation();
+
     return (
         <section id="about" className="bg-white py-12 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-10">
                     <h2 className="text-2xl font-bold text-gray-900">
-                        Why Shop at <span className="text-blue-600">Rahti?</span>
+                        {t('about.title')} <span className="text-blue-600">{t('about.title_highlight')}</span>
                     </h2>
                     <p className="text-gray-500 mt-2">
-                        We bring you the best quality leather boots with a service you can trust.
+                        {t('about.subtitle')}
                     </p>
                 </div>
 
@@ -22,9 +25,9 @@ const AboutSection = () => {
                         <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
                             <Truck className="w-7 h-7" />
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Fast Delivery</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{t('about.features.delivery.title')}</h3>
                         <p className="text-gray-600 text-sm">
-                            We deliver quickly to 58 Wilayas. Get your boots right to your doorstep.
+                            {t('about.features.delivery.description')}
                         </p>
                     </div>
 
@@ -33,9 +36,9 @@ const AboutSection = () => {
                         <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
                             <Banknote className="w-7 h-7" />
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Payment on Delivery</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{t('about.features.payment.title')}</h3>
                         <p className="text-gray-600 text-sm">
-                            Inspect your product first, then pay. Shop with 100% confidence.
+                            {t('about.features.payment.description')}
                         </p>
                     </div>
 
@@ -44,9 +47,9 @@ const AboutSection = () => {
                         <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
                             <ShieldCheck className="w-7 h-7" />
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Verified Quality</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{t('about.features.quality.title')}</h3>
                         <p className="text-gray-600 text-sm">
-                            We hand-pick every pair to ensure you get the best premium leather.
+                            {t('about.features.quality.description')}
                         </p>
                     </div>
 

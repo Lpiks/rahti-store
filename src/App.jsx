@@ -10,6 +10,7 @@ import AboutSection from "./components/AboutSection";
 
 // Simple Home Component
 const HomePage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Hero />
@@ -18,7 +19,7 @@ const HomePage = () => {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Our Collection
+          {t('home.our_collection')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -51,7 +52,17 @@ const HomePage = () => {
   );
 };
 
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+
 const App = () => {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50">
