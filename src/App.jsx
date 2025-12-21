@@ -21,7 +21,11 @@ const HomePage = () => {
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
           {t('home.our_collection')}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className={`grid gap-6 mx-auto ${products.length === 1 ? 'grid-cols-1 max-w-md' :
+            products.length === 2 ? 'grid-cols-1 sm:grid-cols-2 max-w-4xl' :
+              products.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl' :
+                'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+          }`}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

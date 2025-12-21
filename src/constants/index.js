@@ -1,5 +1,10 @@
 // src/constants/index.js
-
+import main from "../assets/images/main.png";
+import main1 from "../assets/images/main1.png";
+import main2 from "../assets/images/main2.png";
+import main3 from "../assets/images/main3.png";
+import main4 from "../assets/images/main4.png";
+import main5 from "../assets/images/main5.png";
 // ⚠️ KEEP YOUR GOOGLE SCRIPT URL HERE
 export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylXp_ulb9s59qMa-3THXOXF1V6SOD_9BOCIkyd_JfCHM4ShcdMCFrAmN6vyyKLS1ZRSQ/exec";
 // WhatsApp contact
@@ -38,59 +43,74 @@ export const WILAYAS = [
 export const products = [
   {
     id: 1,
-    name: 'Classic Denim Jacket',
+    name: 'TitanCharge 240W Pro – The Ultimate 2-in-1 Fast Charging Cable & Integrated Folding Phone Stand',
     price: 8500,
-    category: 'Jackets',
+    category: 'Accessories',
+    categoryAr: 'اكسسوارات',
     stock: 10,
-    description: 'Timeless denim jacket with a modern fit. Perfect for layering in any season.',
-    images: [
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600'
+    description: "Elevate your charging experience with the TitanCharge 240W Pro. This isn't just a cable; it’s a revolutionary mobile accessory designed for power users, gamers, and movie lovers. Engineered with a massive 240W power delivery and a unique built-in folding stand, it allows you to charge at lightning speeds while keeping your device at the perfect viewing angle",
+    nameAr: "TitanCharge 240W Pro – كابل الشحن السريع 2 في 1 وحامل الهاتف المدمج",
+    descriptionAr: "ارتق بتجربة الشحن الخاصة بك مع TitanCharge 240W Pro. هذا ليس مجرد كابل؛ إنه ملحق ثوري للهواتف المحمولة مصمم للمستخدمين المحترفين واللاعبين وعشاق الأفلام. تم تصميمه بقدرة توصيل طاقة هائلة تبلغ 240 واط وحامل مدمج قابل للطي، مما يسمح لك بالشحن بسرعات فائقة مع الحفاظ على جهازك في زاوية المشاهدة المثالية.",
+    images: [[main],
+    [main1],
+    [main2],
+    [main3],
+    [main4],
+    [main5]
     ],
-    reviews: [
-      { user: 'Ahmed', rating: 5, comment: 'Perfect fit and great quality!' }
-    ]
+    // reviews: [
+    //   { user: 'Ahmed', rating: 5, comment: 'Perfect fit and great quality!' }
+    // ]
   },
-  {
-    id: 2,
-    name: 'Premium Leather Boots',
-    price: 12000,
-    category: 'Shoes',
-    stock: 10,
-    description: 'Handcrafted leather boots designed for comfort and durability.',
-    images: [
-      'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600'
-    ],
-    reviews: []
-  },
-  // Add more products here as needed...
-  {
-    id: 1,
-    name: 'Classic Denim Jacket',
-    price: 8500,
-    category: 'Jackets',
-    stock: 10,
-    description: 'Timeless denim jacket with a modern fit. Perfect for layering in any season.',
-    images: [
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600'
-    ],
-    reviews: [
-      { user: 'Ahmed', rating: 5, comment: 'Perfect fit and great quality!' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Premium Leather Boots',
-    price: 12000,
-    category: 'Shoes',
-    stock: 10,
-    description: 'Handcrafted leather boots designed for comfort and durability.',
-    images: [
-      'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600'
-    ],
-    reviews: []
-  },
+  // {
+  //   id: 2,
+  //   name: 'Premium Leather Boots',
+  //   price: 12000,
+  //   category: 'Shoes',
+  //   categoryAr: 'أحذية',
+  //   stock: 10,
+  //   description: 'Handcrafted leather boots designed for comfort and durability.',
+  //   nameAr: "أحذية جلدية فاخرة",
+  //   descriptionAr: "أحذية جلدية مصنوعة يدويًا مصممة للراحة والمتانة.",
+  //   images: [
+  //     'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600'
+  //   ],
+  //   reviews: []
+  // },
+  // // Add more products here as needed...
+  // {
+  //   id: 1,
+  //   name: 'Classic Denim Jacket',
+  //   price: 8500,
+  //   category: 'Jackets',
+  //   categoryAr: 'جاكيتات',
+  //   stock: 10,
+  //   description: 'Timeless denim jacket with a modern fit. Perfect for layering in any season.',
+  //   nameAr: "جاكيت جينز كلاسيكي",
+  //   descriptionAr: "جاكيت جينز كلاسيكي بقصة عصرية. مثالي للارتداء في أي موسم.",
+  //   images: [
+  //     'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600',
+  //     'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600'
+  //   ],
+  //   reviews: [
+  //     { user: 'Ahmed', rating: 5, comment: 'Perfect fit and great quality!' }
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   name: 'Premium Leather Boots',
+  //   price: 12000,
+  //   category: 'Shoes',
+  //   categoryAr: 'أحذية',
+  //   stock: 10,
+  //   description: 'Handcrafted leather boots designed for comfort and durability.',
+  //   nameAr: "أحذية جلدية فاخرة",
+  //   descriptionAr: "أحذية جلدية مصنوعة يدويًا مصممة للراحة والمتانة.",
+  //   images: [
+  //     'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600'
+  //   ],
+  //   reviews: []
+  // },
 ];
 
 // src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop"

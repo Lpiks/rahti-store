@@ -14,6 +14,14 @@
     "home": {
         "our_collection": "مجموعتنا"
     },
+    "productDetails": {
+        "backToProducts": "العودة للمنتجات",
+        "inStock": "متوفر",
+        "available": "متبقية",
+        "buyNow": "شراء الآن",
+        "orderWhatsApp": "اطلب أو استفسر عبر واتساب",
+        "viewDetails": "عرض التفاصيل"
+    },
     "about": {
         "title": "لماذا تتسوق في",
         "title_highlight": "راحتي؟",

@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
   return (
     <div
@@ -18,7 +21,7 @@ const ProductCard = ({ product }) => {
       <div className="relative overflow-hidden">
         <img
           src={product.images[0]}
-          alt={product.name}
+          alt={isArabic ? product.nameAr : product.name}
           // 4. IMAGE STYLES: Added scale-110 on group-hover for the slow zoom effect
           className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
         />
@@ -33,9 +36,9 @@ const ProductCard = ({ product }) => {
 
       <div className="p-4">
         <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-          {product.name}
+          {isArabic ? product.nameAr : product.name}
         </h3>
-        <p className="text-sm text-gray-500 mb-3">{product.category}</p>
+        <p className="text-sm text-gray-500 mb-3">{isArabic ? product.categoryAr : product.category}</p>
 
         <div className="flex items-center justify-between">
           <span className="text-xl font-bold text-blue-600">
@@ -47,7 +50,7 @@ const ProductCard = ({ product }) => {
             // If you prefer the button to be the ONLY click trigger, remove onClick from the top div.
             className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 flex items-center gap-1 transition-colors"
           >
-            View Details <ChevronRight className="w-4 h-4" />
+            {t("productDetails.viewDetails")} <ChevronRight className={`w-4 h-4 ${isArabic ? "rotate-180" : ""}`} />
           </button>
         </div>
       </div>

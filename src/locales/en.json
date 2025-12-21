@@ -14,6 +14,14 @@
     "home": {
         "our_collection": "Our Collection"
     },
+    "productDetails": {
+        "backToProducts": "Back to Products",
+        "inStock": "In Stock",
+        "available": "available",
+        "buyNow": "Buy Now",
+        "orderWhatsApp": "Order or Ask via WhatsApp",
+        "viewDetails": "View Details"
+    },
     "about": {
         "title": "Why Shop at",
         "title_highlight": "Rahti?",
