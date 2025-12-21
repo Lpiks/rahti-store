@@ -78,14 +78,15 @@ const ProductDetails = () => {
                 {isArabic ? product.nameAr : product.name}
               </h1>
               <p className="text-4xl font-bold text-blue-600 mb-6">
-                {product.price} DZD
+                {product.price} {t("productDetails.price")}
               </p>
               <p className="text-gray-600 mb-6">{isArabic ? product.descriptionAr : product.description}</p>
 
               <div className="flex items-center gap-2 text-green-600 mb-6">
                 <CheckCircle className="w-5 h-5" />{" "}
                 <span className="text-sm">
-                  {t("productDetails.inStock")} ({product.stock} {t("productDetails.available")})
+                  {t("productDetails.inStock")}
+                  {/* ({product.stock} {t("productDetails.available")}) */}
                 </span>
               </div>
 

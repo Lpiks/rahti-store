@@ -20,12 +20,13 @@
         "available": "available",
         "buyNow": "Buy Now",
         "orderWhatsApp": "Order or Ask via WhatsApp",
-        "viewDetails": "View Details"
+        "viewDetails": "View Details",
+        "price": "DZD"
     },
     "about": {
         "title": "Why Shop at",
         "title_highlight": "Rahti?",
-        "subtitle": "We bring you the best quality leather boots with a service you can trust.",
+        "subtitle": "We bring you the best quality Products with a service you can trust.",
         "features": {
             "delivery": {
                 "title": "Fast Delivery",
@@ -37,7 +38,7 @@
             },
             "quality": {
                 "title": "Verified Quality",
-                "description": "We hand-pick every pair to ensure you get the best premium leather."
+                "description": "We hand-pick every Product to ensure you get the best premium Products."
             }
         }
     },

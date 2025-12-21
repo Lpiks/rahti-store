@@ -44,7 +44,7 @@ export const products = [
   {
     id: 1,
     name: 'TitanCharge 240W Pro – The Ultimate 2-in-1 Fast Charging Cable & Integrated Folding Phone Stand',
-    price: 8500,
+    price: 2800,
     category: 'Accessories',
     categoryAr: 'اكسسوارات',
     stock: 10,
