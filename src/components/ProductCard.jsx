@@ -1,29 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const ProductCard = ({ product }) => {
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === "ar";
 
   return (
-    <div
-      // 1. MOVED onClick here: Making the whole card clickable is better UX
-      onClick={() => navigate(`/product/${product.id}`)}
+    <Link
+      to={`/product/${product.id}`}
       // 2. CONTAINER STYLES: Added transform, hover:-translate-y-2, and hover:shadow-2xl
       className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer 
                  transform transition-all duration-300 ease-in-out 
-                 hover:-translate-y-2 hover:shadow-2xl group border border-transparent hover:border-blue-50"
+                 hover:-translate-y-2 hover:shadow-2xl group border border-transparent hover:border-blue-50 block"
     >
       {/* 3. IMAGE WRAPPER: Added 'overflow-hidden' so the zoom doesn't spill out */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden aspect-[4/5] w-full">
         <img
           src={product.images[0]}
           alt={isArabic ? product.nameAr : product.name}
+          width="400"
+          height="500"
+          loading="lazy"
           // 4. IMAGE STYLES: Added scale-110 on group-hover for the slow zoom effect
-          className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
         {/* Low Stock Badge (Kept from your original) */}
@@ -45,16 +46,16 @@ const ProductCard = ({ product }) => {
             {product.price} {t("productDetails.price")}
           </span>
 
-          <button
+          <span
             // Note: Since the parent div now handles the click, this button is visual. 
             // If you prefer the button to be the ONLY click trigger, remove onClick from the top div.
             className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 flex items-center gap-1 transition-colors"
           >
             {t("productDetails.viewDetails")} <ChevronRight className={`w-4 h-4 ${isArabic ? "rotate-180" : ""}`} />
-          </button>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

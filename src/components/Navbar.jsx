@@ -37,6 +37,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleLanguage}
+              aria-label="Switch Language"
               className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium cursor-pointer"
             >
               <Globe className="w-5 h-5" />
@@ -46,7 +47,8 @@ const Navbar = () => {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-colors"
+              aria-label="Contact us on WhatsApp"
+              className="flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-full hover:bg-green-800 transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
               <span className="hidden sm:inline font-medium">WhatsApp</span>
@@ -56,6 +58,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
             className="md:hidden text-gray-700"
           >
             <Menu className="w-6 h-6" />

@@ -1,5 +1,5 @@
 import React from "react";
-import heroCover from "../assets/heroCover.jpg";
+import heroCover from "../assets/heroCover.webp";
 import { ShoppingBag } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -19,6 +19,10 @@ const Hero = () => {
           // 👇 OPTION 1: The "General Shopping" Vibe (Best for General Store)
           src={heroCover}
           alt="Online Shopping"
+          fetchpriority="high"
+          loading="eager"
+          width="1920"
+          height="1080"
           className="w-full h-full object-cover"
         />
 

@@ -1,10 +1,10 @@
 // src/constants/index.js
-import main from "../assets/images/main.png";
-import main1 from "../assets/images/main1.png";
-import main2 from "../assets/images/main2.png";
-import main3 from "../assets/images/main3.png";
-import main4 from "../assets/images/main4.png";
-import main5 from "../assets/images/main5.png";
+import main from "../assets/images/main.webp";
+import main1 from "../assets/images/main1.webp";
+import main2 from "../assets/images/main2.webp";
+import main3 from "../assets/images/main3.webp";
+import main4 from "../assets/images/main4.webp";
+import main5 from "../assets/images/main5.webp";
 // ⚠️ KEEP YOUR GOOGLE SCRIPT URL HERE
 export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylXp_ulb9s59qMa-3THXOXF1V6SOD_9BOCIkyd_JfCHM4ShcdMCFrAmN6vyyKLS1ZRSQ/exec";
 // WhatsApp contact

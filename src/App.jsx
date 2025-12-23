@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ProductDetails from "./components/ProductDetails";
+// Lazy load the ProductDetails page to reduce initial bundle size
+const ProductDetails = React.lazy(() => import("./components/ProductDetails"));
 import ProductCard from "./components/ProductCard";
 import Footer from "./components/Footer";
 import { products } from "./constants";
@@ -22,35 +23,16 @@ const HomePage = () => {
           {t('home.our_collection')}
         </h2>
         <div className={`grid gap-6 mx-auto ${products.length === 1 ? 'grid-cols-1 max-w-md' :
-            products.length === 2 ? 'grid-cols-1 sm:grid-cols-2 max-w-4xl' :
-              products.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl' :
-                'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+          products.length === 2 ? 'grid-cols-1 sm:grid-cols-2 max-w-4xl' :
+            products.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl' :
+              'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
           }`}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
-      {/* <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          About Rahti
-        </h2>
-        <div class="flex flex-col md:flex-row gap-4">
-
-          <div class="bg-gray-200 p-4 flex-1">
-            
-          </div>
-          <div class="bg-gray-200 p-4 flex-1">03</div>
-        </div>
-
-
-      </div> */}
       <AboutSection />
-      {/* <footer className="bg-gray-900 text-white py-8 mt-10">
-        <div className="text-center">
-          <p>© 2025 Rahti. Made in Algeria.</p>
-        </div>
-      </footer> */}
       <Footer />
     </>
   );
@@ -62,6 +44,8 @@ import { useEffect } from "react";
 const App = () => {
   const { i18n } = useTranslation();
 
+  // Keep this sync logic for runtime language switches (e.g. user toggles button)
+  // The initial state is now handled by index.html for performance
   useEffect(() => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = i18n.language;
@@ -71,10 +55,12 @@ const App = () => {
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+          </Routes>
+        </Suspense>
       </div>
     </BrowserRouter>
   );
