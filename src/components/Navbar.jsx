@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" aria-label="Rahti Store Home" className="flex items-center gap-2">
             <ShoppingBag className="w-8 h-8 text-blue-600" />
             <span className="text-2xl font-bold text-gray-900">Rahti</span>
           </Link>
@@ -96,6 +96,7 @@ const Navbar = () => {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Contact us on WhatsApp"
                 className="flex items-center gap-2 px-2 py-2 text-green-600 font-bold hover:bg-green-50 rounded"
                 onClick={() => setIsMenuOpen(false)}
               >
